@@ -1,0 +1,19 @@
+server:
+    port: 8088
+exchange:
+  - method: POST
+    path: /api/post
+#    call_uri: http://example.local/api/post
+#    call_cli: /usr/local/bin/post.sh
+    call_cli: jq "."
+  - method: GET
+    path: /api/get
+#//    call_uri: http://example.local/api/get
+    call_uri: https://www.google.com/search
+  - method: DELETE
+    path: /api/delete
+    call_cli: /usr/local/bin/delete.sh
+  - method: GET
+    path: /api/cal
+    call_cli: cal
+
