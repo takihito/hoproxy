@@ -12,6 +12,7 @@ var (
 	tree      *ExchangeTree
 )
 
+// Run TODO あとで書く
 func Run(cfg *Config) {
 	exchanges = cfg.Exchanges
 
@@ -42,8 +43,8 @@ func hellohandlerProxy(w http.ResponseWriter, r *http.Request) {
 }
 
 func callExchange(w http.ResponseWriter, r *http.Request, call *Call) {
-	if call.Uri != "" {
-		exchangeResponse, err := callExchangeUri(r, call.Uri) // あとでerrハンドリング
+	if call.URI != "" {
+		exchangeResponse, err := callExchangeURI(r, call.URI) // あとでerrハンドリング
 		if err != nil {
 			w.WriteHeader(500)
 			fmt.Println(err)

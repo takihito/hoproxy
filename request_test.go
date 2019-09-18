@@ -20,7 +20,7 @@ var mockHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) 
 	fmt.Fprintf(w, "%d", i)
 })
 
-func TestCallExchangeUri(t *testing.T) {
+func TestCallExchangeURI(t *testing.T) {
 
 	ts := httptest.NewServer(mockHandler)
 	defer ts.Close()
@@ -33,7 +33,7 @@ func TestCallExchangeUri(t *testing.T) {
 	//	//req.Form.Encode()
 	//	getReq.URL.RawQuery = v.Encode()
 
-	exchangeResponse, _ := callExchangeUri(getReq, ts.URL)
+	exchangeResponse, _ := callExchangeURI(getReq, ts.URL)
 	if exchangeResponse.StatusCode != 200 {
 		t.Error("inalid GET res.StatusCode")
 	}
@@ -46,7 +46,7 @@ func TestCallExchangeUri(t *testing.T) {
 	v := url.Values{}
 	v.Set("age", strconv.Itoa(age))
 	postReq, _ := http.NewRequest("POST", "http://proxy-test-server/api/bar", strings.NewReader(v.Encode()))
-	exchangeResponse, _ = callExchangeUri(postReq, ts.URL)
+	exchangeResponse, _ = callExchangeURI(postReq, ts.URL)
 	if exchangeResponse.StatusCode != 200 {
 		t.Error("inalid POST res.StatusCode")
 	}

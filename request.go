@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-func callExchangeUri(req *http.Request, uri string) (*ExchangeResponse, error) {
+func callExchangeURI(req *http.Request, uri string) (*ExchangeResponse, error) {
 	exReq, err := http.NewRequest(req.Method, uri, req.Body)
 	if err != nil {
 		fmt.Println(err)
@@ -27,11 +27,11 @@ func callExchangeUri(req *http.Request, uri string) (*ExchangeResponse, error) {
 
 	client := new(http.Client)
 	exRes, err := client.Do(exReq)
-	defer exRes.Body.Close()
 	if err != nil {
 		fmt.Println(err)
 		return nil, err
 	}
+	defer exRes.Body.Close()
 
 	exchangeResponse := &ExchangeResponse{}
 	body, error := ioutil.ReadAll(exRes.Body)

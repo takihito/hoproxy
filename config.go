@@ -6,6 +6,7 @@ import (
 	config "github.com/kayac/go-config"
 )
 
+// NewConfig TODO あとで書く
 func NewConfig(path string) *Config {
 
 	log.Printf("[info] loading config file: %s", path)

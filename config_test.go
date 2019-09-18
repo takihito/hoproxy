@@ -45,7 +45,7 @@ exchange:
 	if cfg.Exchanges[0].Path != "/api/post" {
 		t.Error("not ok cfg.Exchanges[0].Path")
 	}
-	if cfg.Exchanges[0].CallUri != "http://example.local/api/post" {
+	if cfg.Exchanges[0].CallURI != "http://example.local/api/post" {
 		t.Error("not ok cfg.Exchanges[0].CallUri")
 	}
 	if cfg.Exchanges[0].CallCli != "/usr/local/bin/post.sh" {

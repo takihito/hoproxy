@@ -4,6 +4,7 @@ import (
 	"strings"
 )
 
+// CreateExchangeTree TODO あとで書く
 func CreateExchangeTree(cfg *Config) *ExchangeTree {
 	tree := &ExchangeTree{
 		GET:    map[string]*Call{},
@@ -15,7 +16,7 @@ func CreateExchangeTree(cfg *Config) *ExchangeTree {
 
 	for i := range cfg.Exchanges {
 		call := &Call{
-			Uri: cfg.Exchanges[i].CallUri,
+			URI: cfg.Exchanges[i].CallURI,
 			Cli: cfg.Exchanges[i].CallCli,
 		}
 		method := strings.ToUpper(cfg.Exchanges[i].Method)

@@ -11,8 +11,10 @@ import (
 	"time"
 )
 
+// MaxOutputLength TODO あとで書く
 var MaxOutputLength = 1000
 
+// CommandTimeout TODO あとで書く
 var CommandTimeout = 60 * time.Second
 
 func callExchangeCli(req *http.Request, command string) (*ExchangeCli, error) {
